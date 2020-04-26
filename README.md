@@ -1,4 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Setup
+Install Create React App globally:
+
+```
+vagrant@sivakumarvunnam:~/Dockerizing-React-App$ npm install -g create-react-app@3.4.1
+
+```
+Generate a new app:
+
+```
+vagrant@sivakumarvunnam:~/Dockerizing-React-App$ npm init react-app Dockerizing-React-App --use-npm
+vagrant@sivakumarvunnam:~/Dockerizing-React-App$ cd Dockerizing-React-App
+
+```
 
 ## Production
 Let’s create a Dockerfile for use in production called Dockerfile:
