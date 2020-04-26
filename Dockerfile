@@ -1,5 +1,6 @@
 # build environment
 FROM node:13.12.0-alpine as build
+MAINTAINER sivakumarvunnam1@gmail.com
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
