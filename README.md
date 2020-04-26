@@ -67,3 +67,24 @@ Spin up the container:
 vagrant@sivakumarvunnam:~/Dockerizing-React-App$ docker run -itd --rm -p 80:80 react-app:prod
 
 ```
+Test with a new Docker Compose file as well called docker-compose.yml:
+
+```
+version: '3.7'
+
+services:
+
+  sample-prod:
+    container_name: react-app-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+```
+Fire up the container:
+
+```
+vagrant@sivakumarvunnam:~/Dockerizing-React-App$ docker-compose up -d --build
+
+```
