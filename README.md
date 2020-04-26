@@ -24,6 +24,8 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
 ```
+Here, we take advantage of the multistage build pattern to create a temporary image used for building the artifact – the production-ready React static files – that is then copied over to the production image. The temporary build image is discarded along with the original files and folders associated with the image. This produces a lean, production-ready image.
+
 Create the following folder along with a nginx.conf file:
 
 ```
@@ -53,3 +55,15 @@ server {
 
 ```
 
+Using the production Dockerfile, build and tag the Docker image:
+
+```
+vagrant@sivakumarvunnam:~/Dockerizing-React-App$ docker build -f Dockerfile -t react-app:prod .
+
+```
+Spin up the container:
+
+```
+vagrant@sivakumarvunnam:~/Dockerizing-React-App$ docker run -itd --rm -p 80:80 react-app:prod
+
+```
