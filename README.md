@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Production
 Let’s create a Dockerfile for use in production called Dockerfile:
+```
 # build environment
 FROM node:13.12.0-alpine as build
 MAINTAINER sivakumarvunnam1@gmail.com
@@ -21,4 +22,6 @@ COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+
+```
 
